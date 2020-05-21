@@ -5,6 +5,7 @@ class App extends Component{
         return (
             <div>
                 Hello world
+                {!true ? 123 : 321}
             </div>  
         )
     }
