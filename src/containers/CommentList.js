@@ -16,7 +16,7 @@ class CommentListContainer extends Component {
   }
 
   _loadComments () {
-    let comments = localStorage.getItem('comments')
+    let comments = sessionStorage.getItem('comments')
     comments = comments ? JSON.parse(comments) : []
     this.props.initComments(comments)
   }
@@ -27,7 +27,7 @@ class CommentListContainer extends Component {
       ...comments.slice(0, index),
       ...comments.slice(index + 1)
     ]
-    localStorage.setItem('comments', JSON.stringify(newComments))
+    sessionStorage.setItem('comments', JSON.stringify(newComments))
     if (this.props.onDeleteComment) {
       this.props.onDeleteComment(index)
     }

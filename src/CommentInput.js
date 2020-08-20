@@ -23,14 +23,14 @@ class CommentInput extends Component {
   }
 
   _loadUsername () {
-    const username = localStorage.getItem('username')
+    const username = sessionStorage.getItem('username')
     if (username) {
       this.setState({ username })
     }
   }
 
   _saveUsername (username) {
-    localStorage.setItem('username', username)
+    sessionStorage.setItem('username', username)
   }
 
   handleUsernameBlur (event) {
